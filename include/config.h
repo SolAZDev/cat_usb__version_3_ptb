@@ -26,7 +26,8 @@ enum FingerModule {
 enum AdditionalModules {
     NONE = 0,
     MOUSE_MODULE_ADNS_5050 = 1,
-    GYROSCOPE_MODULE_MPU_6050 = 2
+    GYROSCOPE_MODULE_MPU_6050 = 2,
+    PIMORONI_TRACKBALL = 3
 };
 
 
@@ -37,7 +38,7 @@ public:
 
     /* CONFIG - here you can define your cat variant */ 
 
-    enum DeviceSide device_side = LEFT;
+    enum DeviceSide device_side = RIGHT;
     // enum DeviceSide device_side = RIGHT;
 
     enum ThumbModule thumb_module = JUST_KEYS;
@@ -47,7 +48,7 @@ public:
     enum FingerModule finger_module = ONLY_KEYS;
     // enum FingerModule finger_module = KEYS_AND_WHEEL;
 
-    enum AdditionalModules additional_modules = NONE;
+    enum AdditionalModules additional_modules = PIMORONI_TRACKBALL;
     // enum AdditionalModules additional_modules = MOUSE_MODULE_ADNS_5050;
     // enum AdditionalModules additional_modules = GYROSCOPE_MODULE_MPU_6050;
 
