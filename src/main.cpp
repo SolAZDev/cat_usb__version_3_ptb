@@ -45,6 +45,9 @@ Remark:
 // module to control the gyroscope
 #include "MPU6050_mod.h"
 
+// module to control the Pimoroni Trackball
+#include "pimoroni_trackball.h"
+
 // module to control the joystick
 #include "joystick.h"
 
@@ -88,6 +91,9 @@ void setup()
     } 
     else if (config.additional_modules == GYROSCOPE_MODULE_MPU_6050) {
       mpu6050.initialize();
+    }
+    else if (config.additional_modules == PIMORONI_TRACKBALL) {
+      pimoroni_trackball.initialize();
     }
 
     neopixelled.initialize();
@@ -139,5 +145,9 @@ void loop()
   else if (config.additional_modules == GYROSCOPE_MODULE_MPU_6050)
   {
     mpu6050.read();
+  }
+  else if (config.additional_modules == PIMORONI_TRACKBALL)
+  {
+    pimoroni_trackball.read();
   }
 }

@@ -41,6 +41,8 @@ void Config::set_variant() {
         variant.setCharAt(11,'M');
     } else if (additional_modules == GYROSCOPE_MODULE_MPU_6050) {
         variant.setCharAt(11,'G');
+    }else if (additional_modules == PIMORONI_TRACKBALL) {
+        variant.setCharAt(11,'P');
     }
          
 }   
