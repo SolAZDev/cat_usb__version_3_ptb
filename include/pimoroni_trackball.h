@@ -3,22 +3,22 @@
 
 #include <Arduino.h>
 #include <Wire.h>
-#include <pimoroniTrackball.h>
+#include <pimoroniTrackball.h> //ncreynolds
 #include "events.h"
 #include "layer_control.h"
 #include "layouts_manager_cat.h"
 
 extern pimoroniTrackball trackball;
-
-class Pimoroni_Trackball{
+class PimoroniTrackball{
 public:
     void initialize();
     void read();
+    void smooth();
 private:
     int y_mouse;
     int x_mouse;
-    // TODO: Find a better way to do Smoothing. This just snaps in place.
-    int multiplier; 
+    // TODO: This is for testing only. Once PR, replace with mouse_factor.
+    float x_multiplier, y_multiplier;
 };
-extern Pimoroni_Trackball pimoroni_trackball;
+extern PimoroniTrackball pimoroni_trackball;
 #endif
